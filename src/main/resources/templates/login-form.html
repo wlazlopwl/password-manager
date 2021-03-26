@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div class="container" style="background-color: gainsboro">
+    <h1>Logowanie</h1><br><br>
+    <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+        <label for="username">Login</label>
+        <input type="text" id="username" th:field="*{name}" name="username" autofocus="autofocus" required/>
+        <label for="password">Hasło</label>
+        <input type="password" id="password" th:field="*{password}" name="password" required/><br><br>
+        <input class="btn btn-primary"  type="submit" value="Zaloguj się"/>
+        <a class="btn btn-primary"  th:href="@{/register/form}">Rejestracja</a>
+    </form>
+
+
+
+
+</div>
+</body>
+</html>

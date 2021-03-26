@@ -1,0 +1,43 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body xmlns:th="http://www.thymeleaf.org">
+<div class="container" style="background-color: gainsboro">
+<h1>Mój portfel</h1>
+<a class="btn btn-primary" th:href="@{/add-password/form}">Dodaj nowe hasło</a>
+
+<a class="btn btn-primary" th:href="@{/password-confirm/form}">Pokaż wszystkie hasła</a>
+
+<br>
+<br>
+<table  class="table table-hover table-light" >
+    <thead>
+    <th >Nazwa strony www</th>
+    <th >Login</th>
+    <th >Hasło</th>
+    </thead>
+    <tbody>
+    <tr class="table-light"  th:each="passwordItem: ${passwordItems}">
+        <td  th:text="${passwordItem.service}"/>
+        <td  th:text="${passwordItem.login}"/>
+        <td  th:text="${passwordItem.password}" />
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<a class="btn btn-primary" th:href="@{/change-password/form}">Zmień główne hasło</a>
+
+<a class="btn btn-primary" th:href="@{/logout}">Wyloguj</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+
+<body>
+<div class="container" style="background-color: gainsboro">
+    <h1>Rejestracja nowego użytkownika</h1>
+    <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+        <label for="username">Login</label>
+        <br>
+        <input type="text" th:field="*{name}" id="username" autofocus="autofocus" required/> <br/>
+        <br>
+        <label for="password">Hasło</label>
+        <br>
+        <input type="password" id="password" th:field="*{password}" name="password" required/> <br/>
+        <br>
+        <label for="types">Szyfrowanie</label>
+        <br>
+        <input list="types" id="type" th:field="*{passwordType}" placeholder="Wybierz typ" required>
+        <datalist id="types">
+            <option>HMAC</option>
+            <option>SHA512</option>
+        </datalist>
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Zarejestruj się"/>
+    </form>
+</div>
+</body>
+
+</html>
